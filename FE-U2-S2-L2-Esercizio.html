@@ -1,99 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <!-- Abbiamo bisogno di un sito web per un'agenzia di viaggi!
-
-In questa pagina aggiungerai destinazioni di posti che sogni di visitare in futuro.
-
-Il progetto non richiede alcuna customizzazione di CSS, dovrai crearlo interamente usando le classi di bootstrap, sia per quello che riguarda il layout che lo stile.
-
-
-Testa frequentemente il tuo lavoro nelle 3 principali risoluzioni (mobile, tablet, desktop) usando i developer tools del browser nella sezione emulazione device, per una maggiore precisione.
-
-Inizia utilizzando i componenti esistenti di Bootstrap 5 per creare la tua pagina (modificali all'occorrenza utilizzando le utility classes di bootstrap: colori, spazi, margini, dimensioni etc...)
-Usa container > row > col-* in questo ordine per ottenere un layout responsive perfetto.
-
-Esercizi:
-
-1) Implementa una navbar con questi elementi di menu:
-Home
-Saldi
-Welcome Summer
-Last Minute
-Recensioni
-
-Collegherai ogni sezione della pagina agli elementi del menu corrispondenti. 
-
-2) Aggiungi un logo alla navbar, un qualsiasi logo di agenzia di viaggi, anche inventata.
-
-3) Aggiungi una sezione introduttiva con il nome, il payoff dell'agenzia, 
-una breve descrizione in corsivo e una call-to-action (bottone) "Prenota ora" di colore azzurro chiaro e testo bianco e grassetto
-
-Il background della sezione sarà grigio chiaro e con bordi arrotondati e del padding generoso all'interno
-
-4) Implementa la sezione "Saldi". Qui mostrerai 4 destinazioni.
-
-In questa sezione dovranno esserci:
-
-4 card per destinazioni per linea a schermo grande - desktop (quattro sulla stessa linea)
-3 card per destinazioni per linea a schermo medio  - tablet  (una dovrà scomparire)
-2 card per destinazioni per linea a schermo piccolo - mobile (due per linea)
-
-le card avranno un bordo di 2px azzurro chiaro, il bottone azzurro chiaro e testo default
-
-5) Implementa la sezione "Welcome Summer". Qui mostrerai 6 destinazioni al tuo utente. (nessun bordo, ma stesso stile dei bottoni precedenti)
-
-In questa sezione dovranno esserci:
-
-6 card per destinazioni per linea a schermo extra large
-3 card per destinazioni per linea a schermo grande (desktop)
-2 card per destinazioni per linea a schermo medio (tablet)
-2 card per destinazioni per linea a schermo piccolo (mobile)
-
-6) Implementa la sezione "Offerta del giorno". Qui avrai:
-
-66% dello spazio dedicato all'immagine del luogo di destinazione
-33% dedicato al nome, date, prezzo e un badge con "best offer" come testo
-
-l'immagine avrà i bordi arrotondati e un'ombra leggera
-per il contenuto: il nome dovrà essere più grande del resto,
-le date dovranno essere formattate con font "monospace",
-il prezzo dovrà essere definito come "lead"
-e il badge sarà scuro
-
-
-7) Rendi invisibile la sezione "Offerta del giorno" su schermi piccoli.
-
-8) Aggiungi nella sezione "Welcome Summer" un'ombra grande ad ogni card.
-
-9) Crea una sezione "Last Minute", in cui mostrerai 6 immagini delle destinazioni last minute come rettangoli ombreggiati dai bordi arrotondati, senza testo. Rendile responsive come preferisci!
-
-10) Crea una sezione "Recensioni", dove l'utente potrà trovare alcuni feedback da utenti fittizi. 
-Piccola immagine tonda a sinistra con bordo 2px azzurro, nome utente e recensione a destra
-
-11) Crea un footer con le informazioni dell'agenzia e un bottone "Contattaci".
-
-
-
-EXTRAS
-
-12) Crea un bottone vicino ad ogni sezione per collassarla e riaprirla se premuto.
-
-13) Crea la possibilità di contare il numero di "viaggi" presenti sulla pagina e visualizzare il risultato in un alert.
-
-14) Crea un modale con un campo email e un messaggio.
-
-15) Quando l'utente cliccherà su "Contattaci", il modale dovrà essere visualizzato.
-
-16) Crea una funzione che aggiunga un badge con la scritta "HOT" su ognuna delle offerte "Welcome Summer" posizionato in alto a destra.
-
-17) Crea una funzione che rimuova tutte le "card" dalla pagina
-
--->
-</head>
-
-<body></body>
-
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trip Advisor - vostro consigliere per i viaggi</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <footer>
+      <nav
+        class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-lg-around bg-success-subtle position-sticky top-0"
+      >
+        <img
+          class="mx-auto d-block"
+          src="./assets/img/pngwing.com.png"
+          alt="trip advisor"
+        />
+        <ul class="d-flex flex-column flex-lg-row text-center list-unstyled">
+          <li>
+            <a class="text-decoration-none text-dark mx-1" href="#home">Home</a>
+          </li>
+          <li>
+            <a class="text-decoration-none text-dark mx-1" href="#saldi">Saldi</a>
+          </li>
+          <li>
+            <a class="text-decoration-none text-dark mx-1" href="#welcome"
+              >Welcome Summer</a
+            >
+          </li>
+          <li>
+            <a class="text-decoration-none text-dark mx-1" href="#offer"
+              >Last Minute</a
+            >
+          </li>
+          <li>
+            <a class="text-decoration-none text-dark mx-1" href="#Recensioni">Recensioni</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <main>
+      <div id="home" class="container my-5 bg-success-subtle">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-around mt-4">
+            <h1 class="border-bottom border-dark-subtle">
+              Trip Advisor-
+              <span class="fs-5 align-self-center"
+                >we advise for your trip</span
+              >
+            </h1>
+          </div>
+          <div class="col-12 text-center fst-italic">
+            <h2 class="fw-light px-1">
+              scopri le destinazioni più calde del momento!
+            </h2>
+            <div class="col-12">
+              <button class="btn btn-success px-5 my-5">Prenota ora</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="saldi">
+        <div class="container">
+          <h2>Saldi</h2>
+          <div class="row d-flex justify-content-center">
+            <div class="col-6 col-md-4 col-lg-3 my-2">
+              <div class="card border-2 border-success" style="width: 18rem">
+                <img
+                  src="./assets/img/istockphoto-1160947136-612x612.jpg"
+                  class="card-img-top w-100"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eligendi repellendus ipsam est similique labore repudiandae
+                    dolorem, commodi laborum non quas quos inventore, nesciunt
+                    quidem! Officia hic quibusdam quisquam unde fugit!
+                  </p>
+                  <a href="#" class="btn btn-success">Prenota</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 my-2">
+              <div class="card border-2 border-success" style="width: 18rem">
+                <img
+                  src="./assets/img/istockphoto-1160947136-612x612.jpg"
+                  class="card-img-top w-100"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Enim eligendi, possimus nobis incidunt facilis accusantium
+                    voluptatibus obcaecati necessitatibus reiciendis odio
+                    veritatis voluptatum exercitationem optio dolorem expedita,
+                    id illo itaque inventore?
+                  </p>
+                  <a href="#" class="btn btn-success">Prenota</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 my-2">
+              <div class="card border-2 border-success" style="width: 18rem">
+                <img
+                  src="./assets/img/istockphoto-1160947136-612x612.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Quasi, iure dolor quos vitae perferendis sit pariatur autem
+                    molestias debitis qui similique neque facere quam
+                    necessitatibus officiis iusto fugit eligendi doloremque!
+                  </p>
+                  <a href="#" class="btn btn-success">Prenota</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 d-md-none d-lg-block col-lg-3 my-2">
+              <div class="card border-2 border-success" style="width: 18rem">
+                <img
+                  src="./assets/img/istockphoto-1160947136-612x612.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Quasi, iure dolor quos vitae perferendis sit pariatur autem
+                    molestias debitis qui similique neque facere quam
+                    necessitatibus officiis iusto fugit eligendi doloremque!
+                  </p>
+                  <a href="#" class="btn btn-success">Prenota</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="mt-4" id="welcome">
+        <div class="container">
+          <h2>Welcome Summer</h2>
+          <div class="row d-flex justify-content-center">
+            <div class="col-6 col-lg-4 col-xl-2 my-2">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="./assets/img/istockphoto-1160947136-612x612.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eligendi repellendus ipsam est similique labore repudiandae
+                    dolorem, commodi laborum non quas quos inventore, nesciunt
+                    quidem! Officia hic quibusdam quisquam unde fugit!
+                  </p>
+                  <a href="#" class="btn btn-success">Prenota</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-4 col-xl-2 my-2">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="./assets/img/istockphoto-1160947136-612x612.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Enim eligendi, possimus nobis incidunt facilis accusantium
+                    voluptatibus obcaecati necessitatibus reiciendis odio
+                    veritatis voluptatum exercitationem optio dolorem expedita,
+                    id illo itaque inventore?
+                  </p>
+                  <a href="#" class="btn btn-success">Prenota</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-4 col-xl-2 my-2">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="./assets/img/istockphoto-1160947136-612x612.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Quasi, iure dolor quos vitae perferendis sit pariatur autem
+                    molestias debitis qui similique neque facere quam
+                    necessitatibus officiis iusto fugit eligendi doloremque!
+                  </p>
+                  <a href="#" class="btn btn-success">Prenota</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-4 col-xl-2 my-2">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="./assets/img/istockphoto-1160947136-612x612.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Quasi, iure dolor quos vitae perferendis sit pariatur autem
+                    molestias debitis qui similique neque facere quam
+                    necessitatibus officiis iusto fugit eligendi doloremque!
+                  </p>
+                  <a href="#" class="btn btn-success">Prenota</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-4 col-xl-2 my-2">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="./assets/img/istockphoto-1160947136-612x612.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Itaque commodi fugit distinctio repellendus, asperiores
+                    quibusdam aliquid eligendi nisi nihil, vero adipisci
+                    temporibus consectetur inventore, quia modi voluptates qui
+                    voluptatibus quo.
+                  </p>
+                  <a href="#" class="btn btn-success">Prenota</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-4 col-xl-2 my-2">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="./assets/img/istockphoto-1160947136-612x612.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Itaque commodi fugit distinctio repellendus, asperiores
+                    quibusdam aliquid eligendi nisi nihil, vero adipisci
+                    temporibus consectetur inventore, quia modi voluptates qui
+                    voluptatibus quo.
+                  </p>
+                  <a href="#" class="btn btn-success">Prenota</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-2" id="offer">
+        <div class="container d-sm-none d-md-block">
+          <h2>Offerta del giorno</h2>
+          <div class="row">
+            <div class="col-9">
+              <img class="rounded"
+                src="./assets/img/istockphoto-1160947136-612x612.jpg"
+                alt=""
+              />
+              <div class="col-3 d-flex flex-column">
+                <h1 class="fw-light">Fushiwaru Maldives</h1>
+                <p class="font-monospace text-dark-emphasis">
+                  15.01.2021-31.o1.2021
+                </p>
+                <p class="fs-2 fw-light">Ville a partire da 500&euro;, non fartele sfuggire!<span class="badge rounded-pill text-bg-dark text-light">Best offer</span></p>
+              </div>
+            </div>
+          </div>
+          <div id="offer" class="mt-2">
+            <div class="container">
+                <h2>Last Minute</h2>
+                <div class="row">
+                    <div class="col-6 mb-2">
+                        <img class="rounded w-100" src="./assets/img/istockphoto-1160947136-612x612.jpg" alt="">
+                    </div>
+                    <div class="col-6 mb-2">
+                        <img class="rounded w-100" src="./assets/img/istockphoto-1160947136-612x612.jpg" alt="">
+                    </div>
+                    <div class="col-6 mb-2">
+                        <img class="rounded w-100" src="./assets/img/istockphoto-1160947136-612x612.jpg" alt="">
+                    </div>
+                    <div class="col-6 mb-2">
+                        <img class="rounded w-100" src="./assets/img/istockphoto-1160947136-612x612.jpg" alt="">
+                    </div>
+                    <div class="col-6 mb-2">
+                        <img class="rounded w-100" src="./assets/img/istockphoto-1160947136-612x612.jpg" alt="">
+                    </div>
+                    <div class="col-6 mb-2">
+                        <img class="rounded w-100" src="./assets/img/istockphoto-1160947136-612x612.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+      <div id="Recensioni">
+        <div class="container">
+            <h2 class="text-center">Dicono di noi</h2>
+            <div class="row">
+                <div class="col-12 d-flex">
+                    <img src="./assets/img/profile-icon-png-917.png" alt="">
+                    <div>
+                        <p class="fw-bold my-2">Username</p>
+                        <p>I recently booked a vacation through Trip Advisor, and I couldn't be happier with my experience! From the very beginning, their team was incredibly helpful in planning every detail of my trip. They found the best deals, suggested amazing destinations, and ensured everything ran smoothly. The itinerary was well-organized, and I got to experience hidden gems I wouldn't have found on my own. I highly recommend their services to anyone looking for a stress-free and unforgettable travel experience. Will definitely book with them again!</p>
+                    </div>
+                </div>
+                <div class="col-12 d-flex">
+                    <img src="./assets/img/profile-icon-png-917.png" alt="">
+                    <div>
+                        <p class="fw-bold my-2">Username</p>
+                        <p>I had the most amazing trip, all thanks to Trip Advisor! Their attention to detail, customer service, and expert travel knowledge made my journey stress-free and enjoyable. Every recommendation they made was spot on, and I appreciated their personalized approach to planning my vacation. Everything went perfectly, from airport transfers to hotel bookings. If you want a dream vacation without any worries, this is the agency to go with. Thank you for an incredible experience!</p>
+                    </div>
+                </div>
+                <div class="col-12 d-flex">
+                    <img src="./assets/img/profile-icon-png-917.png" alt="">
+                    <div>
+                        <p class="fw-bold my-2">Username</p>
+                        <p>This was my first time using Trip Advisor, and I am beyond impressed! They handled everything from flights to accommodations and even included fantastic guided tours. Communication was seamless, and they were always available to answer my questions. Thanks to them, my family and I had the most relaxing vacation ever. If you're looking for a reliable travel agency that truly cares about their clients, look no further. Can’t wait for my next adventure with them!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-dark d-flex flex-column align-items-center">
+        <div>
+        <button class="btn btn-outline-secondary my-5">contattaci</button>
+        </div>
+        <div>
+        <p class="text-light">&copy; 2025 <span class="text-bg-danger rounded border border-black">FAKE</span> Trip advisor LLC All rights reserved</p>
+        </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
